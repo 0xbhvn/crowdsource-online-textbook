@@ -6,6 +6,8 @@
  */
 
 require('./bootstrap');
+window.particlesJS = require('particlejs');
+
 
 window.Vue = require('vue');
 

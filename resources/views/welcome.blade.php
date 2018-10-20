@@ -80,9 +80,7 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Crowdsource Textbook
-                </div>
+                
             </div>
         </div>
     </body>
