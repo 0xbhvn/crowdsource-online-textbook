@@ -14,7 +14,7 @@ class TextbookController extends Controller
      */
     public function index()
     {
-        //
+        return "Ranjit Rocks";
     }
 
     /**
@@ -24,7 +24,7 @@ class TextbookController extends Controller
      */
     public function create()
     {
-        //
+        return view('textbooks.create');
     }
 
     /**
@@ -35,7 +35,12 @@ class TextbookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Textbook::create([
+            'user_id' => auth()->id(),
+            'name' => request('name'),
+        ]);
+
+        return redirect('/uni/textbooks');
     }
 
     /**

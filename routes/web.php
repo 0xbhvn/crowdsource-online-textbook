@@ -18,3 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/uni/dashboard', 'HomeController@uniDash')->middleware('uni');
+Route::get('/uni/textbooks/create', 'TextbookController@create')->middleware('uni');
+Route::get('/uni/textbooks', 'TextbookController@index')->middleware('uni');
+Route::post('/uni/textbooks', 'TextbookController@store')->middleware('uni');
+
+Route::get('/mod/dashboard', 'HomeController@modDash')->middleware('mod');

@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src='https://devpreview.tiny.cloud/demo/tinymce.min.js'></script>
 </head>
 <body>
     <div id="app">

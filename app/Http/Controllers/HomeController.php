@@ -25,4 +25,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function uniDash()
+    {
+        return view('dashboards.uni');
+    }
+
+    public function modDash()
+    {
+        return view('dashboards.mod');
+    }
 }
