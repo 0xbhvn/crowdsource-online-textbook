@@ -79,9 +79,7 @@
                 </div>
             @endif
 
-            <div class="content">
-                
-            </div>
+            
         </div>
     </body>
 </html>
