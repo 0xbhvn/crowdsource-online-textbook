@@ -2,7 +2,7 @@
 
 namespace App;
 
-class Textbook extends Model
+class Topic extends Model
 {
     //
 }
