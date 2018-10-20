@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Textbook;
+use App\Topic;
 use Illuminate\Http\Request;
 
 class TextbookController extends Controller
@@ -35,12 +36,18 @@ class TextbookController extends Controller
      */
     public function store(Request $request)
     {
-        Textbook::create([
+        $textbook = Textbook::create([
             'user_id' => auth()->id(),
             'name' => request('name'),
         ]);
 
-        return redirect('/uni/textbooks');
+        $topic = Topic::create([
+            'user_id' => auth()->id(),
+            'title' => '',
+            'text' => '',
+        ]);
+
+        return redirect('/textbooks/'.$topic->id);
     }
 
     /**
@@ -51,7 +58,6 @@ class TextbookController extends Controller
      */
     public function show(Textbook $textbook)
     {
-        //
     }
 
     /**

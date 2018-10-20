@@ -24,7 +24,9 @@ class CreateTopicsTable extends Migration {
       $table->integer('depth')->nullable();
 
       // Add needed columns here (f.ex: name, slug, path, etc.)
-      $table->string('name');
+      $table->integer('user_id');
+      $table->string('title')->nullable();
+      $table->longText('text')->nullable();
 
       $table->timestamps();
     });

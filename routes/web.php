@@ -20,8 +20,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/uni/dashboard', 'HomeController@uniDash')->middleware('uni');
-Route::get('/uni/textbooks/create', 'TextbookController@create')->middleware('uni');
 Route::get('/uni/textbooks', 'TextbookController@index')->middleware('uni');
-Route::post('/uni/textbooks', 'TextbookController@store')->middleware('uni');
 
 Route::get('/mod/dashboard', 'HomeController@modDash')->middleware('mod');
+
+Route::get('/textbooks/create', 'TextbookController@create')->middleware('uni');
+Route::post('/textbooks', 'TextbookController@store')->middleware('uni');
+
+Route::get('/textbooks/{topic}', 'TopicController@show');
+Route::get('/textbooks/{topic}/add', 'TopicController@create');
+Route::post('/textbooks/{topic}', 'TopicController@store');
+

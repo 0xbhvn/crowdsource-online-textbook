@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Topic;
 
 class TopicController extends Controller
 {
@@ -21,9 +22,9 @@ class TopicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Topic $topic)
     {
-        //
+        return view('topics.create', compact('topic'));
     }
 
     /**
@@ -32,9 +33,13 @@ class TopicController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Topic $topic)
     {
-        //
+        Topic::create([
+            'user_id' => auth()->id(),
+            'title' => request('title'),
+            'text' => request('text'),
+        ])->makeChildOf($topic);
     }
 
     /**
@@ -45,7 +50,11 @@ class TopicController extends Controller
      */
     public function show($id)
     {
-        //
+        $topic = Topic::where('id', $id)->first();
+
+        $childs = $topic->getDescendants();
+
+        return view('textbooks.show', compact( 'topic', 'childs'));
     }
 
     /**

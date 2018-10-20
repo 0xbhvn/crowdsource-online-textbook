@@ -1,4 +1,6 @@
 <?php
+
+namespace App;
 use Baum\Node;
 
 /**
@@ -30,28 +32,28 @@ class Topic extends Node {
   //  *
   //  * @var string
   //  */
-  protected $parentColumn = 'parent_id';
+  // protected $parentColumn = 'parent_id';
 
   // /**
   //  * Column name for the left index.
   //  *
   //  * @var string
   //  */
-  protected $leftColumn = 'lft';
+  // protected $leftColumn = 'lft';
 
   // /**
   //  * Column name for the right index.
   //  *
   //  * @var string
   //  */
-  protected $rightColumn = 'rgt';
+  // protected $rightColumn = 'rgt';
 
   // /**
   //  * Column name for the depth field.
   //  *
   //  * @var string
   //  */
-  protected $depthColumn = 'depth';
+  // protected $depthColumn = 'depth';
 
   // /**
   //  * Column to perform the default sorting
@@ -66,7 +68,7 @@ class Topic extends Node {
   // *
   // * @var array
   // */
-  protected $guarded = ['id', 'parent_id', 'lft', 'rgt', 'depth'];
+  // protected $guarded = array('id', 'parent_id', 'lft', 'rgt', 'depth');
 
   //
   // This is to support "scoping" which may allow to have multiple nested
@@ -98,7 +100,5 @@ class Topic extends Node {
   // Please refer the Laravel documentation for further instructions on how
   // to hook your own callbacks/observers into this events:
   // http://laravel.com/docs/5.0/eloquent#model-events
-
-
 
 }
