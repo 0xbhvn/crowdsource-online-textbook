@@ -28,8 +28,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function topic()
+    public function contribution()
     {
-        return $this->hasMany(Topic::class);
+        return $this->hasMany(Contribution::class);
     }
 }
