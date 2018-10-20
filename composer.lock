@@ -4,8 +4,46 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f88f59498d0f52c767a12ab6fb6a598",
+    "content-hash": "f1c45e55bf07260a11d9b8888cc30d99",
     "packages": [
+        {
+            "name": "adaptive/php-text-difference",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adaptivemedia/php-text-difference.git",
+                "reference": "aead08f1cf8892041e8177d8a188316bebb22146"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adaptivemedia/php-text-difference/zipball/aead08f1cf8892041e8177d8a188316bebb22146",
+                "reference": "aead08f1cf8892041e8177d8a188316bebb22146",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Adaptive\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Adaptive Media",
+                    "homepage": "http://www.adaptivemedia.se"
+                }
+            ],
+            "description": "A comprehensive library for generating differences between two hashable objects (strings or arrays). Fork of a fork to add namespaces and psr-4 autoloading",
+            "keywords": [
+                "difference",
+                "php",
+                "text compare"
+            ],
+            "time": "2014-02-18T12:44:44+00:00"
+        },
         {
             "name": "baum/baum",
             "version": "1.1.1",

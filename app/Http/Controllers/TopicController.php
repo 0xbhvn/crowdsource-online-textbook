@@ -40,6 +40,8 @@ class TopicController extends Controller
             'title' => request('title'),
             'text' => request('text'),
         ])->makeChildOf($topic);
+
+        return redirect('/textbooks/'.$topic->id);
     }
 
     /**
@@ -52,9 +54,9 @@ class TopicController extends Controller
     {
         $topic = Topic::where('id', $id)->first();
 
-        $childs = $topic->getDescendants();
+        $childs = $topic->immediateDescendants()->get();
 
-        return view('textbooks.show', compact( 'topic', 'childs'));
+        return view('topics.show', compact( 'topic', 'childs'));
     }
 
     /**

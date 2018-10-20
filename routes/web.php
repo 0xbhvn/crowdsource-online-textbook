@@ -31,3 +31,7 @@ Route::get('/textbooks/{topic}', 'TopicController@show');
 Route::get('/textbooks/{topic}/add', 'TopicController@create');
 Route::post('/textbooks/{topic}', 'TopicController@store');
 
+Route::get('/textbooks/{topic}/contribute', 'ContributionController@create');
+Route::post('/textbooks/{topic}/contribute', 'ContributionController@store');
+Route::get('/textbooks/{topic}/contribute/{contribution}', 'ContributionController@show');
+

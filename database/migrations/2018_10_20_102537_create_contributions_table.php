@@ -15,6 +15,10 @@ class CreateContributionsTable extends Migration
     {
         Schema::create('contributions', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
+            $table->integer('topic_id');
+            $table->string('title');
+            $table->longText('text');
             $table->timestamps();
         });
     }
