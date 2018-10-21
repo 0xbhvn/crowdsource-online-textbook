@@ -10,6 +10,11 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
-
-mix.js('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+mix.combine(['resources/js/jquery.min.js',
+    'resources/js/jquery.scrollex.min.js',
+    'resources/js/jquery.scrolly.min.js',
+    'resources/js/browser.min.js',
+    'resources/js/breakpoints.min.js',
+    'resources/js/util.js',
+    'resources/js/main.js'], 'public/js/all.js');
+mix.sass('resources/sass/app.scss', 'public/css');

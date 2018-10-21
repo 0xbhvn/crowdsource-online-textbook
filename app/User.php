@@ -28,6 +28,16 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function textbook()
+    {
+        return $this->hasMany(Textbook::class);
+    }
+
+    public function topic()
+    {
+        return $this->hasMany(Topic::class);
+    }
+
     public function contribution()
     {
         return $this->hasMany(Contribution::class);

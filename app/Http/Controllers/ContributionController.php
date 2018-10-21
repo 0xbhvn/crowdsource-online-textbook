@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contribution;
+use App\Topic;
 use Illuminate\Http\Request;
 
 class ContributionController extends Controller
@@ -22,9 +23,11 @@ class ContributionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Topic $topic)
     {
-        //
+        $topic = Topic::where('id', $topic->id)->first();
+
+        return view('contributions.create', compact('topic'));
     }
 
     /**
@@ -33,9 +36,16 @@ class ContributionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Topic $topic)
     {
-        //
+        $contribution = Contribution::create([
+            'user_id' => auth()->id(),
+            'topic_id' => $topic->id,
+            'title' => request('title'),
+            'text' => request('text'),
+        ]);
+
+        return redirect('/textbooks/'.$topic->id.'/contribute/'.$contribution->id);
     }
 
     /**
@@ -44,9 +54,12 @@ class ContributionController extends Controller
      * @param  \App\Contribution  $contribution
      * @return \Illuminate\Http\Response
      */
-    public function show(Contribution $contribution)
+    public function show($id)
     {
-        //
+        $contribution = Contribution::where('id', $id)->first();
+        $topic = Topic::where('id', $contribution->topic_id)->first();
+
+        return view('contributions.show', compact('contribution', 'topic'));
     }
 
     /**
